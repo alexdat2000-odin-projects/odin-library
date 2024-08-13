@@ -1,0 +1,118 @@
+:root {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+thead {
+  height: 60px;
+}
+
+.read {
+  background: #9FFF9C;
+}
+
+.read:hover {
+  background: #8FE58C;
+}
+
+.not-read {
+  background: #FF9C9C;
+}
+
+.not-read:hover {
+  background: #E58C8C;
+}
+
+.delete-button {
+  background: #F0F0F0;
+}
+
+.delete-button {
+  background: #D8D8D8;
+}
+
+.read-button, .delete-button {
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.25rem 1rem;
+  border-radius: 0.2rem;
+  width: 120px;
+}
+
+#open-modal-button, #modal-add-book, #modal-cancel {
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 1rem;
+}
+
+#open-modal-button {
+  margin-top: 2rem;
+  margin-left: 15vw;
+  background: #00a5ff;
+}
+
+#open-modal-button:hover {
+  background: #008dd9;
+}
+
+#modal-form {
+  width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  row-gap: 1rem;
+  justify-items: left;
+  align-items: center;
+}
+
+#modal-form input {
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+#modal-form input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+#modal-form #modal-action-buttons {
+  grid-column: 1 / -1;
+}
+
+
+#modal-add-book, #modal-cancel {
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 1rem;
+}
+
+#modal-add-book {
+  background: #2e8b2b;
+}
+
+#modal-add-book:hover {
+  background: #1f5e1d;
+}
+
+#modal-cancel {
+  background: #d33e3e;
+}
+
+#modal-cancel:hover {
+  background: #a52525;
+}

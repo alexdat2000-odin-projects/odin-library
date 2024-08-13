@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Library</h1>
+
+    <table style="width: 80vw; margin-inline: 10vw" id="book-table">
+      <thead>
+        <tr>
+          <th style="width: 20%">Name</th>
+          <th style="width: 20%">Author</th>
+          <th style="width: 20%">Number of pages</th>
+          <th style="width: 20%">Is read?</th>
+          <th style="width: 20%">Delete</th>
+        </tr>
+      </thead>
+
+      <!-- Content here is added by js -->
+    </table>
+
+    <button id="open-modal-button">Add book</button>
+
+    <dialog id="modal">
+      <form method="dialog" id="modal-form">
+        <label for="input-title">Title</label>
+        <input name="title" id="input-title">
+
+        <label for="input-author">Author</label>
+        <input name="title" id="input-author">
+
+        <label for="input-pages">Pages</label>
+        <input name="title" id="input-pages" type="number">
+
+        <label for="input-is-read">Is read?</label>
+        <input name="title" id="input-is-read" type="checkbox">
+
+        <div id="modal-action-buttons">
+          <button id="modal-add-book">Add book</button>
+          <button id="modal-cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+  </body>
+</html>
