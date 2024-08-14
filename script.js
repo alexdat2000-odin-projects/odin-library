@@ -1,16 +1,34 @@
+class Book {
+    title
+    author
+    pages
+    is_read
+
+    constructor(title, author, pages, is_read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.is_read = is_read;
+    }
+
+    generateHTML(book_id) {
+        return `
+      <tr>
+        <td>${this.title}</td>
+        <td>${this.author}</td>
+        <td>${this.pages}</td>
+        <td><button class="read-button ${this.is_read ? "read" : "not-read"}"
+        onclick="toggleRead(${book_id})">${this.is_read ? "Read" : "Not read"}</button></td>
+        <td><button class="delete-button" onclick="deleteBook(${book_id})">Delete</button></td>
+      </tr>
+`
+    }
+}
+
 let books = [
     new Book("The Hobbit", "J.R.R. Tolkien", 295, false),
     new Book("Harry Potter and the Philosopher's Stone", "J. K. Rowling", 223, true)
 ];
-
-
-function Book(title, author, pages, is_read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.is_read = is_read;
-}
-
 
 function toggleRead(book_id) {
     books[book_id].is_read ^= true;
@@ -34,19 +52,12 @@ function updateTable() {
         </tr>
       </thead>`
 
+    console.log(books.length);
     for (let book_id = 0; book_id < books.length; book_id++) {
-        table.innerHTML += `
-      <tr>
-        <td>${books[book_id].title}</td>
-        <td>${books[book_id].author}</td>
-        <td>${books[book_id].pages}</td>
-        <td><button class="read-button ${books[book_id].is_read ? "read" : "not-read"}"
-        onclick="toggleRead(${book_id})">${books[book_id].is_read ? "Read" : "Not read"}</button></td>
-        <td><button class="delete-button" onclick="deleteBook(${book_id})">Delete</button></td>
-      </tr>
-`
+        table.innerHTML += books[book_id].generateHTML(book_id);
     }
 }
+
 
 function clearInputs() {
     document.getElementById("input-title").value = "";
@@ -86,6 +97,5 @@ function init() {
         clearInputs();
     });
 }
-
 
 document.addEventListener("DOMContentLoaded", init);
