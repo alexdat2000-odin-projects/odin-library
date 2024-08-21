@@ -73,6 +73,7 @@ function init() {
     bodyElement.addEventListener("click", updateTable);
 
     const modalElement = document.getElementById("modal");
+    const formElement = document.getElementById("modal-form");
     const openBtn = document.getElementById("open-modal-button");
     openBtn.addEventListener("click", () => {
         modalElement.showModal();
@@ -81,11 +82,17 @@ function init() {
     const cancelBtn = document.getElementById("modal-cancel");
     cancelBtn.addEventListener("click", () => {
         modalElement.close();
-        clearInputs();
+        formElement.reset();
     });
 
     const addBtn = document.getElementById("modal-add-book");
+
     addBtn.addEventListener("click", (e) => {
+        if (document.getElementById("input-title").value === "" ||
+            document.getElementById("input-author").value === "" ||
+            document.getElementById("input-pages").value === "") {
+            return false;
+        }
         e.preventDefault();
         books.push(new Book(
             document.getElementById("input-title").value,
@@ -94,7 +101,7 @@ function init() {
             document.getElementById("input-is-read").checked,
         ));
         modalElement.close();
-        clearInputs();
+        formElement.reset();
     });
 }
 

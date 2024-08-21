@@ -28,23 +28,22 @@
     <dialog id="modal">
       <form method="dialog" id="modal-form">
         <label for="input-title">Title</label>
-        <input name="title" id="input-title">
+        <input name="title" id="input-title" required>
 
         <label for="input-author">Author</label>
-        <input name="title" id="input-author">
+        <input name="title" id="input-author" required>
 
         <label for="input-pages">Pages</label>
-        <input name="title" id="input-pages" type="number">
+        <input name="title" id="input-pages" type="number" required>
 
         <label for="input-is-read">Is read?</label>
         <input name="title" id="input-is-read" type="checkbox">
 
         <div id="modal-action-buttons">
-          <button id="modal-add-book">Add book</button>
-          <button id="modal-cancel">Cancel</button>
+          <button type="submit" id="modal-add-book">Add book</button>
+          <button type="reset" id="modal-cancel">Cancel</button>
         </div>
       </form>
     </dialog>
-
   </body>
 </html>
